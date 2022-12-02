@@ -1,6 +1,4 @@
 from enum import Enum
-import os
-import sys
 
 
 class Shape(Enum):
@@ -9,12 +7,7 @@ class Shape(Enum):
     SCISSOR = 3
 
 
-SHAPE = {
-    'A': Shape.ROCK,
-    'B': Shape.PAPER,
-    'C': Shape.SCISSOR,
-}
-
+SHAPE = {'A': Shape.ROCK, 'B': Shape.PAPER, 'C': Shape.SCISSOR}
 RULES = {
     (Shape.ROCK, Shape.ROCK): 3,
     (Shape.ROCK, Shape.PAPER): 0,
@@ -56,9 +49,6 @@ def solution_two(input: str) -> int:
 
 
 if __name__ == "__main__":
-
-    with open(os.path.join(sys.path[0], 'input'), 'r') as f:
-        input = f.read()
-
+    input = open('input').read()
     print(f"Solution 1: {solution_one(input)}")
     print(f"Solution 2: {solution_two(input)}")
